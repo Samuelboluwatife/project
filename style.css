@@ -108,7 +108,7 @@ header .header-wrapper{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 40px;
+    padding: 8px 40px;
     background: var(--light);
     box-shadow: 10px 8px 5px -11px rgba(0,0,0,0.75);
     transition: all 0.3s ease;

@@ -212,21 +212,22 @@ header .header-wrapper{
 
 .hero-content {
     max-width: 800px;
+    margin-top: 60px;
     padding: 70px;
     animation: fadeInUp 1s ease-out 0.5s both;
 }
 
-.hero h1 {
-    font-size: 3rem;
+.hero h2 {
+    font-size: 1.5rem;
     font-weight: 700;
     margin-bottom: 15px;
     color: var(--light);
     animation: fadeInUp 1s ease-out 0.7s both;
 }
 
-.hero h2{
+.hero h1{
     color: var(--secondary);
-    font-size: 2.5rem;
+    font-size:3.6rem;
     margin-bottom: 10px;
     animation: fadeInUp 1s ease-out 0.9s both;
 }

@@ -1,11 +1,56 @@
 const hamburger = document.getElementById('hamburger');
 const navMenu = document.getElementById('nav-menu');
 const form = document.querySelector(".get-started-form");
+ let currentSlide = 0;
+const totalSlides = 4;
+const track = document.getElementById('carouselTrack');
+const dotsContainer = document.getElementById('dotsContainer');
 
+// Create dots
+for (let i = 0; i < totalSlides; i++) {
+    const dot = document.createElement('div');
+    dot.classList.add('dot');
+    if (i === 0) dot.classList.add('active');
+    dot.onclick = () => goToSlide(i);
+    dotsContainer.appendChild(dot);
+}
+
+function updateCarousel() {
+    const offset = currentSlide * 100;
+    track.style.transform = `translateX(-${offset}%)`;
+    
+    // Update dots
+    document.querySelectorAll('.dot').forEach((dot, index) => {
+        dot.classList.toggle('active', index === currentSlide);
+    });
+}
+
+function nextSlide() {
+    currentSlide = (currentSlide + 1) % totalSlides;
+    updateCarousel();
+}
+
+function prevSlide() {
+    currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+    updateCarousel();
+}
+
+function goToSlide(index) {
+    currentSlide = index;
+    updateCarousel();
+}
+
+        // Auto-play (optional)
+        setInterval(nextSlide, 5000);
+
+// hamburger onclick code
   hamburger.addEventListener('click', () => {
     navMenu.classList.toggle('show');
       });
 
+
+
+// code for typewritter effect
   const points = [
   " Corrective joint rehabilitation for older adults and those in recovery",
   " Functional training for limitless strength endurance",
